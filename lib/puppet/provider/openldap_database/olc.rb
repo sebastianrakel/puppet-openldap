@@ -198,7 +198,7 @@ Puppet::Type.
     rescue Exception => e
       raise Puppet::Error, "LDIF content:\n#{IO.read t.path}\nError message: #{e.message}"
     end
-    t.delete
+    #t.delete
   end
 
   def create
