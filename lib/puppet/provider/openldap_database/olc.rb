@@ -277,7 +277,7 @@ Puppet::Type.
     rescue Exception => e
       raise Puppet::Error, "LDIF content:\n#{IO.read t.path}\nError message: #{e.message}"
     end
-    t.delete
+    #t.delete
     initdb if resource[:initdb] == :true
     @property_hash[:ensure] = :present
     slapcat("(&(objectClass=olc#{resource[:backend].to_s.capitalize}Config)(olcSuffix=#{resource[:suffix]}))").
