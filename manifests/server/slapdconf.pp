@@ -52,6 +52,10 @@ class openldap::server::slapdconf {
     openldap::server::database { 'dc=my-domain,dc=com':
       ensure => absent,
     }
+  } elsif $::osfamily == 'Archlinux' {
+    openldap::server::database { 'dc=my-domain,dc=com':
+      ensure => absent,
+    }
   }
 
   create_resources('openldap::server::database', $::openldap::server::databases)
